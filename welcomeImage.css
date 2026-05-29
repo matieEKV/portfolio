@@ -1,5 +1,6 @@
 .hack-mark {
   opacity: 0;
+  margin: 0;
 }
 .hack-mark.active {
   opacity: 1;

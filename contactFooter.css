@@ -1,36 +1,33 @@
-/* 1. The new wrapper creates a safe boundary for the arrow */
+/* 1. The Main Wrapper */
 .main-footer {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 0 15rem 0;
+  padding: 2rem 2rem 15vh 2rem;
+
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-footer {
+  align-self: flex-start;
 }
 
 .contact-footer p {
   color: white;
-  font-size: 2.5rem;
-  margin-left: 25rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
 }
 
-.contactButtonsBottom {
-  display: flex;
-  margin-left: 45rem;
-  gap: 2rem;
-}
-
-/* 2. Position the arrow safely inside the footer */
 .arrow-container2 {
-  position: absolute;
-  width: 150px;
-  height: 100px;
-  top: 30%;
-  left: 45%;
-  z-index: 10;
+  align-self: center;
+
+  width: clamp(80px, 25vw, 150px);
 }
 
 .curved-arrow2 {
-  transform: rotate(20deg);
+  transform: rotate(35deg);
+  width: 100%;
+  height: auto;
 }
 
 .curved-arrow2 path {
@@ -41,33 +38,8 @@
   stroke-linejoin: round;
 }
 
-.contact-footer,
-.arrow-container2,
 .contactButtonsBottom {
-  opacity: 0;
-  animation: revealSequence linear forwards;
-  animation-timeline: view();
-}
-
-/* 3. Stagger them by changing WHEN they fade in during the scroll! */
-
-.contact-footer {
-  animation-range: cover 0% cover 15%;
-}
-
-/* Arrow starts a little later, finishes when 25% up the screen */
-.arrow-container2 {
-  animation-range: cover 10% cover 25%;
-}
-
-/* Icons start last, finish when 35% up the screen */
-.contactButtonsBottom {
-  animation-range: cover 20% cover 35%;
-}
-
-/* The shared keyframe */
-@keyframes revealSequence {
-  to {
-    opacity: 1;
-  }
+  align-self: flex-end;
+  gap: 2rem;
+  margin: 0;
 }

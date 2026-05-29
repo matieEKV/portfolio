@@ -1,0 +1,65 @@
+@media (max-width: 1140px) {
+  .name {
+    top: 10%;
+    right: 30%;
+  }
+
+  .arrow-container {
+    width: 150px;
+    height: 80px;
+    top: 25%;
+    left: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .svg-wrapper {
+    transform: scale(2) translate(0%, 40%);
+  }
+
+  .sentence {
+    left: -20%;
+  }
+
+  .bio {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+  }
+
+  .profile-image {
+    max-width: 80%;
+  }
+
+  .arrow-container {
+    left: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sentence {
+    left: -30%;
+  }
+
+  .contactButtons {
+    top: 2%;
+  }
+
+  .name {
+    left: 10%;
+    font-size: 2.1rem;
+  }
+
+  .arrow-container {
+    left: 10%;
+  }
+
+  .contactButtonsBottom {
+    gap: 1rem;
+  }
+
+  .main-footer {
+    max-width: 250px;
+  }
+}

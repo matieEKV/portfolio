@@ -7,11 +7,13 @@
   left: 35%;
   z-index: 10;
 }
+
 .curved-arrow {
   transform: rotate(120deg);
   opacity: 0;
   animation: fadeIn 1s ease-in 4.2s forwards;
 }
+
 .curved-arrow path {
   fill: none;
   stroke: #fff;

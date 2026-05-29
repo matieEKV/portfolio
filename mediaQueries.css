@@ -38,8 +38,12 @@
 }
 
 @media (max-width: 480px) {
+  .svg-wrapper {
+    transform: scale(1.8) translate(0%, 50%);
+  }
   .sentence {
     left: -30%;
+    top: -5%;
   }
 
   .contactButtons {
@@ -48,11 +52,13 @@
 
   .name {
     left: 10%;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
 
   .arrow-container {
-    left: 10%;
+    width: 4rem;
+    top: 18%;
+    left: 18%;
   }
 
   .contactButtonsBottom {
@@ -61,5 +67,8 @@
 
   .main-footer {
     max-width: 250px;
+  }
+  .bio {
+    margin-left: 1rem;
   }
 }

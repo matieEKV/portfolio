@@ -1,0 +1,114 @@
+.stack-main {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#cards {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: justify;
+
+  /* Explicit row sizing — each card occupies one row of --card-height. */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards, 6), 70vh);
+  gap: 4vh;
+}
+
+.card__content {
+  /* The visual styling — the sticky behaviour, animation, and keyframes
+     all live in the editable <style> tag in index.html. */
+  height: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: start;
+  gap: 8px 24px;
+  padding: 32px 36px;
+  border-radius: 14px;
+
+  background: hsl(
+    calc(230 - (var(--index) - 1) * 4) 40% calc(20% + (var(--index) - 1) * 5%)
+  );
+  color: #ffffff; /* White text for contrast against dark cards */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle glassy edge */
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+}
+
+.card__num {
+  color: transparent;
+}
+
+.project-link {
+  transition: transform 0.2s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.project-link:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.card__content h3 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.005em;
+}
+
+.card__content p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+#cards {
+  --numcards: 6;
+  --card-top-offset: 1.5em;
+  view-timeline-name: --cards;
+  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+}
+
+.card {
+  position: sticky;
+  top: 0;
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 0%;
+  animation: scale linear forwards;
+  animation-timeline: --cards;
+  animation-range: exit-crossing
+    calc((var(--index) - 1) / var(--numcards) * 100%) exit-crossing
+    calc(var(--index) / var(--numcards) * 100%);
+}
+
+.card-image {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.project-info {
+  max-width: 90%;
+}
+
+@keyframes scale {
+  to {
+    transform: scale(calc(1.1 - 0.1 * (var(--numcards) - var(--index) + 1)));
+  }
+}

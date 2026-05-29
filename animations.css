@@ -1,0 +1,39 @@
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shrinkAndMove {
+  100% {
+    transform: scale(1) translateX(0); /* Returns to normal inline size and position */
+  }
+}
+
+/* Phase 3: Fade in the rest of the sentence */
+@keyframes revealText {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes neonFlicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    /* The "ON" States - Multiple layers of drop-shadow create a deep, intense radiance */
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 12px #03cad5)
+      drop-shadow(0 0 30px #02cdd7) drop-shadow(0 0 60px #03c6d0);
+  }
+  20%,
+  24%,
+  55% {
+    /* The "OFF" States - The glow completely drops out during the flash */
+    filter: none;
+  }
+}

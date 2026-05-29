@@ -1,0 +1,79 @@
+@import "./scroll.css";
+@import "./welcomeImage.css";
+@import "./arrow.css";
+@import "./animations.css";
+@import "./cardStack.css";
+@import "./contactFooter.css";
+
+body {
+  background-color: rgb(14, 8, 42);
+  font-family: "Philosopher", sans-serif;
+  margin: 1rem;
+}
+
+.bio {
+  display: flex;
+  color: white;
+  gap: 2rem;
+  max-width: 90%;
+  margin-left: 4rem;
+}
+.content {
+  opacity: 0;
+}
+
+.content,
+.logo {
+  animation: fadeIn 1s ease-in 3.5s forwards;
+}
+.profile-image {
+  object-fit: contain;
+  /* max-height: 40%; */
+  max-width: 40%;
+}
+
+.description {
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.contactButtons {
+  max-height: 5rem;
+  max-width: 5rem;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.logo {
+  max-height: 2rem;
+  max-width: 2rem;
+  opacity: 0;
+  animation:
+    neonFlicker 1.5s ease-in-out 3.5s forwards,
+    fadeIn 1s ease-in 3s forwards;
+}
+
+.name {
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 4s forwards;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-style: italic;
+  position: absolute;
+  top: 0%;
+  right: 30%;
+}
+
+.projects-heading {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}

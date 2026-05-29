@@ -1,0 +1,102 @@
+.drawing-path {
+  /* Set dasharray to 1 (full length thanks to pathLength="1") */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+
+  animation: draw linear both;
+  animation-timeline: scroll(root);
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.box {
+  width: 280px;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(242, 206, 207, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 20;
+}
+
+.box h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.box p {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* Align boxes to match the SVG path peaks (roughly 20% and 80%) */
+.box-left {
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.box-right {
+  align-self: flex-end;
+  margin-right: 5%;
+}
+
+/* <main class="relative min-h-[400vh] py-[20vh] overflow-hidden">
+      <!-- The SVG that weaves through the boxes -->
+      <svg
+        class="absolute top-0 left-0 w-full h-full pointer-events-none"
+        preserveAspectRatio="none"
+        viewBox="0 0 100 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M 50 0 
+             C 50 50, 80 50, 80 100 
+             C 80 150, 20 150, 20 200 
+             C 20 250, 80 250, 80 300 
+             C 80 350, 50 350, 50 400"
+          class="drawing-path"
+          pathLength="1"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+      </svg>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h1 class="text-6xl font-bold mb-12 text-center">Weaving Scroll</h1>
+        <p class="text-xl opacity-80 text-center mb-[60vh]">
+          The SVG path below is driven by the scroll progress of the page.
+        </p>
+
+        <div class="flex flex-col gap-[75vh]">
+          <div class="box box-right">
+            <h3>Precision</h3>
+            <p>The line follows the curves perfectly.</p>
+          </div>
+
+          <div class="box box-left">
+            <h3>Responsiveness</h3>
+            <p>Driven by pure CSS scroll timelines.</p>
+          </div>
+
+          <div class="box box-right">
+            <h3>Complexity</h3>
+            <p>Any SVG path can be animated this way.</p>
+          </div>
+        </div>
+
+        <div class="mt-[60vh] text-center">
+          <p class="text-2xl opacity-60">End of the line.</p>
+        </div>
+      </div>
+    </main> */

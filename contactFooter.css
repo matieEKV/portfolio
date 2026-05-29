@@ -1,0 +1,73 @@
+/* 1. The new wrapper creates a safe boundary for the arrow */
+.main-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0 15rem 0;
+}
+
+.contact-footer p {
+  color: white;
+  font-size: 2.5rem;
+  margin-left: 25rem;
+}
+
+.contactButtonsBottom {
+  display: flex;
+  margin-left: 45rem;
+  gap: 2rem;
+}
+
+/* 2. Position the arrow safely inside the footer */
+.arrow-container2 {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  top: 30%;
+  left: 45%;
+  z-index: 10;
+}
+
+.curved-arrow2 {
+  transform: rotate(20deg);
+}
+
+.curved-arrow2 path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-footer,
+.arrow-container2,
+.contactButtonsBottom {
+  opacity: 0;
+  animation: revealSequence linear forwards;
+  animation-timeline: view();
+}
+
+/* 3. Stagger them by changing WHEN they fade in during the scroll! */
+
+.contact-footer {
+  animation-range: cover 0% cover 15%;
+}
+
+/* Arrow starts a little later, finishes when 25% up the screen */
+.arrow-container2 {
+  animation-range: cover 10% cover 25%;
+}
+
+/* Icons start last, finish when 35% up the screen */
+.contactButtonsBottom {
+  animation-range: cover 20% cover 35%;
+}
+
+/* The shared keyframe */
+@keyframes revealSequence {
+  to {
+    opacity: 1;
+  }
+}
